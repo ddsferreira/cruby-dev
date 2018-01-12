@@ -1,0 +1,5 @@
+DEPENDENCIES
+  cruby
+
+GRAPH
+  cruby (1.0.2)
