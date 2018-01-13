@@ -19,9 +19,22 @@ end
 # Checkout cruby master branch from github
 
 git "cruby-source" do
-  repository "git://github.com/ruby/ruby.git"
-  destination "/home/ubuntu/src"
-  # 4e0a512972cdcbfcd5279f1a2a81ba342ed75b6e        refs/tags/v2_5_0
-  revision "4e0a512972cdcbfcd5279f1a2a81ba342ed75b6e"
-  action :sync
+  repository "git://github.com/dsferreira/ruby.git"
+  destination "/home/ubuntu/src/cruby"
+  revision "trunk"
+  user "ubuntu"
+  group "ubuntu"
+  action :checkout
+end
+
+##
+# Checkout "v2_5_0" tag into "development" branch
+
+bash 'checkout_development_branch' do
+  cwd "/home/ubuntu/src/cruby"
+  user "ubuntu"
+  code <<-EOH
+    git checkout -b development v2_5_0
+  EOH
+  not_if "git branch | grep development", :cwd => "/home/ubuntu/src/cruby"
 end
