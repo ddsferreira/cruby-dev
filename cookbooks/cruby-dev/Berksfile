@@ -1,0 +1,7 @@
+source "https://supermarket.chef.io"
+
+## Uncomment if you want to use a local cookbook
+# cookbook "my-local-cookbook", path: "../my-local-cookbook"
+
+## Uncomment if you want to use a test cookbook
+# cookbook "my-test-cookbook", path: "test/my-test-cookbook"

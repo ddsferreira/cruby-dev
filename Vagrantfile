@@ -35,13 +35,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision :chef_solo do |chef|
     # Installing cruby to get all cruby development dependencies.
-    chef.add_recipe "cruby"
-
-    chef.json = {
-      :ruby => {
-        :version => "2.5.0"
-      }
-    }
+    chef.add_recipe "cruby-dev"
   end
 
 

@@ -1,5 +1,6 @@
 DEPENDENCIES
-  cruby
+  cruby-dev
+    path: cookbooks/cruby-dev
 
 GRAPH
-  cruby (1.0.2)
+  cruby-dev (0.1.0)
